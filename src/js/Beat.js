@@ -11,10 +11,15 @@ export default class Beat extends EventEmitter {
 
   constructor() {
     super();
+    this.count = 0;
     
     setInterval(() => {
       this.emit(Beat.events.BIT);
-      console.log("bit")
+     
+      if(this.count== 6){
+        console.log("000")
+        this.count = 0
+      }
     }, 600);
     
   }
