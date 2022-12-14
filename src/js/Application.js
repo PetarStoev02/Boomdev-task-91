@@ -23,12 +23,8 @@ export default class Application extends EventEmitter {
     message.classList.add("message");
     if (this.count == 0) {
       message.innerText = lyrics[0];
-      console.log("start");
-      console.log(lyrics[0]);
     } else {
       message.innerText = lyrics[this.count];
-      console.log("start false");
-
     }
 
     this.count++;
