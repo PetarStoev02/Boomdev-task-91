@@ -1,7 +1,6 @@
 // import Application from "./Application";
 import EventEmitter from "eventemitter3";
 
-
 export default class Beat extends EventEmitter {
   static get events() {
     return {
@@ -12,15 +11,14 @@ export default class Beat extends EventEmitter {
   constructor() {
     super();
     this.count = 0;
-    
+
     setInterval(() => {
       this.emit(Beat.events.BIT);
-     
-      if(this.count== 6){
-        console.log("000")
-        this.count = 0
+
+      if (this.count == 6) {
+        this.count = 0;
+        console.log(this.count);
       }
     }, 600);
-    
   }
 }

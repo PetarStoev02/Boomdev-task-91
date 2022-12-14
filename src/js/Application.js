@@ -21,13 +21,16 @@ export default class Application extends EventEmitter {
     const lyrics = ["Ah", "ha", "ha", "ha", "stayin' alive", "stayin' alive"];
     const message = document.createElement("div");
     message.classList.add("message");
-    if (this.count == 0) {
+
+    if (this.count === undefined) {
       message.innerText = lyrics[0];
-    } else {
+      this.count++;
+    } else{
       message.innerText = lyrics[this.count];
+      this.count++;
     }
 
-    this.count++;
+    
     document.querySelector(".main").appendChild(message);
   }
 }
